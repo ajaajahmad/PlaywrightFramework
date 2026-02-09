@@ -1,4 +1,5 @@
 const { devices, expect } = require('@playwright/test');
+const { trace } = require('node:console');
 
 const config = ({
   testDir: './tests',
@@ -9,7 +10,9 @@ const config = ({
   reporter: 'html',
   use: {
     browserName: 'chromium',
-    headless: false
+    headless: false,
+    screenshot: 'on',
+    trace: 'retain-on-failure'
   }
 
 });
