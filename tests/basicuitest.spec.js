@@ -47,7 +47,6 @@ test('UI Control', async ({ page }) => {
     await page.locator('#terms').uncheck();
     expect(await page.locator('#terms').isChecked()).toBeFalsy();
     await expect(docuementLink).toHaveAttribute("class", "blinkingText");
-    await page.pause();
 });
 
 test('Child Window Handling', async ({ browser }) => {
