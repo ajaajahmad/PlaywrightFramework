@@ -9,22 +9,6 @@ let orderId;
 test.beforeAll(async () => {
 
     const apiContext = await request.newContext();
-    const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login", { data: requestBody });
-    expect(loginResponse.ok()).toBeTruthy();
-    const loginResponseJSON = await loginResponse.json();
-    token = loginResponseJSON.token;
-
-    const orderResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order", {
-
-        data: orderRequest,
-        headers: {
-            'Authorization': token,
-            'Content-Type': 'application/json'
-
-        },
-    });
-    const orderResponseJSON = await orderResponse.json();
-    orderId = orderResponseJSON.orders[0];
 
 });
 
@@ -33,6 +17,10 @@ test.beforeEach(() => {
 });
 
 test('Client App Test', async ({ page }) => {
+
+
+    const apiUtil = new apiUtils();
+    const orderId = createOrder();
 
     await page.addInitScript(value => {
 
