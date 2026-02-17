@@ -9,7 +9,10 @@ class apiUtils {
         expect(loginResponse.ok()).toBeTruthy();
         const loginResponseJSON = await loginResponse.json();
         token = loginResponseJSON.token;
+        return token;
+    }
 
+    async createOrder() {
         const orderResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order", {
 
             data: orderRequest,
@@ -21,7 +24,6 @@ class apiUtils {
         });
         const orderResponseJSON = await orderResponse.json();
         orderId = orderResponseJSON.orders[0];
-        return token;
     }
 
 
