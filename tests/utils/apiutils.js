@@ -1,7 +1,11 @@
 class apiUtils {
 
+    constructor(apiContext) {
+        this.apiContext = apiContext;
+    }
+
     async getToken() {
-        const loginResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login", { data: requestBody });
+        const loginResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/auth/login", { data: requestBody });
         expect(loginResponse.ok()).toBeTruthy();
         const loginResponseJSON = await loginResponse.json();
         token = loginResponseJSON.token;
