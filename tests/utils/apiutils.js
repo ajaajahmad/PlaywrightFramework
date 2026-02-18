@@ -13,7 +13,7 @@ class apiUtils {
     }
 
     async createOrder() {
-        const orderResponse = await apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order", {
+        const orderResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order", {
 
             data: orderRequest,
             headers: {
