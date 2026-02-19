@@ -24,5 +24,6 @@ class apiUtils {
         });
         const orderResponseJSON = await orderResponse.json();
         orderId = orderResponseJSON.orders[0];
+        return orderId;
     }
 }
