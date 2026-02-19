@@ -17,7 +17,7 @@ class apiUtils {
 
             data: orderRequest,
             headers: {
-                'Authorization': token,
+                'Authorization': this.getToken(),
                 'Content-Type': 'application/json'
 
             },
