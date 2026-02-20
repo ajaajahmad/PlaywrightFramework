@@ -19,8 +19,8 @@ test.beforeEach(() => {
 test('Client App Test', async ({ page }) => {
 
 
-    const apiUtil = new apiUtils();
-    const orderId = createOrder();
+    const apiUtil = new apiUtils(apiContext);
+    const orderId = createOrder(orderRequest);
 
     await page.addInitScript(value => {
 
