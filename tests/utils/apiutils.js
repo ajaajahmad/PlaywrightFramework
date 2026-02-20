@@ -11,7 +11,7 @@ class apiUtils {
         return token;
     }
 
-    async createOrder() {
+    async createOrder(orderRequest) {
         const orderResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order", {
 
             data: orderRequest,
