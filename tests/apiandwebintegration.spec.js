@@ -1,8 +1,5 @@
 const { test, expect, request } = require('@playwright/test');
 
-const requestBody = { userEmail: "test.user@domain.com", userPassword: "Asdf@123" };
-const orderRequest = { orders: [{ country: "inda", productOrderedId: "6960ea76c941646b7a8b3dd5" }] };
-
 let token;
 let orderId;
 
