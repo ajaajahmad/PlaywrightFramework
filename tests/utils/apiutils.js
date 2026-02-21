@@ -1,7 +1,8 @@
 class apiUtils {
 
-    constructor(apiContext) {
+    constructor(apiContext, requestBody) {
         this.apiContext = apiContext;
+        this.requestBody = requestBody;
     }
 
     async getToken() {
