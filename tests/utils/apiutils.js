@@ -29,3 +29,4 @@ class apiUtils {
         return orderId;
     }
 }
+module.exports = { apiUtils };
