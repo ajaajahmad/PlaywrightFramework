@@ -32,4 +32,4 @@ class apiutils {
         return respones;
     }
 }
-module.exports = { apiutils };
+module.exports = {apiutils};
