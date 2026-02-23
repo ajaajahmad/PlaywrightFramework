@@ -1,4 +1,4 @@
-class apiUtils {
+class apiutils {
 
     constructor(apiContext, requestBody) {
         this.apiContext = apiContext;
@@ -32,4 +32,4 @@ class apiUtils {
         return respones;
     }
 }
-module.exports = { apiUtils };
+module.exports = { apiutils };
