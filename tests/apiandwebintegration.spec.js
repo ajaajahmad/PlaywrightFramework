@@ -1,5 +1,5 @@
 const { test, expect, request } = require('@playwright/test');
-const { apiutils } = require('./utils/apiutils');
+const { ApiUtils } = require('./utils/ApiUtils');
 
 const requestBody = { userEmail: "test.user@domain.com", userPassword: "Asdf@123" };
 const orderRequest = { orders: [{ country: "inda", productOrderedId: "6960ea76c941646b7a8b3dd5" }] };
@@ -10,8 +10,8 @@ let orderId;
 test.beforeAll(async () => {
 
     const apiContext = await request.newContext();
-    const apiUtil = new apiutils(newContext, requestBody);
-    apiUtil.createOrder(orderRequest);
+    const apiutil = new apiutils(newContext, requestBody);
+    apiutil.createOrder(orderRequest);
 
 });
 

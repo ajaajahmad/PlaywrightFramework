@@ -1,4 +1,4 @@
-class apiutils {
+class ApiUtils {
 
     constructor(apiContext, requestBody) {
         this.apiContext = apiContext;
@@ -10,13 +10,13 @@ class apiutils {
             data: this.requestBody
         });
         const loginResponseJSON = await loginResponse.json();
-        token = loginResponseJSON.token;
+        const token = loginResponseJSON.token;
         return token;
     }
 
     async createOrder(orderRequest) {
-        let respones = {};
-        respones.token = await this.getToken();
+        let responses = {};
+        responses.token = await this.getToken();
         const orderResponse = await this.apiContext.post("https://rahulshettyacademy.com/api/ecom/order/create-order", {
 
             data: orderRequest,
@@ -27,9 +27,9 @@ class apiutils {
             },
         });
         const orderResponseJSON = await orderResponse.json();
-        orderId = orderResponseJSON.orders[0];
-        respones.orderId = orderId;
-        return respones;
+        const orderId = orderResponseJSON.orders[0];
+        responses.orderId = orderId;
+        return responses;
     }
 }
-module.exports = {apiutils};
+module.exports = { ApiUtils };
