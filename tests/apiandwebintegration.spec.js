@@ -11,7 +11,7 @@ test.beforeAll(async () => {
 
     const apiContext = await request.newContext();
     const apiUtil = new ApiUtils(apiContext, requestBody);
-    apiUtil.createOrder(orderRequest);
+    const responses = await apiUtil.createOrder(orderRequest);
 
 });
 
