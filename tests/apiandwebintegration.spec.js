@@ -10,7 +10,7 @@ let orderId;
 test.beforeAll(async () => {
 
     const apiContext = await request.newContext();
-    const apiUtil = new ApiUtils(newContext, requestBody);
+    const apiUtil = new ApiUtils(apiContext, requestBody);
     apiUtil.createOrder(orderRequest);
 
 });
