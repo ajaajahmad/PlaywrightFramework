@@ -43,5 +43,5 @@ test('Client App Test', async ({ page }) => {
 
     const orderIdDetails = (await page.locator('.col-text').textContent()).trim();
     await page.pause();
-    await expect(orderId.includes(orderIdDetails)).toBeTruthy();
+    await expect(orderIdDetails).toContain(orderId);
 });
